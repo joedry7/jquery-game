@@ -1,13 +1,14 @@
-class Board {
-  constructor(enemies) {
+class Gameboard {
+  constructor(level) {
     this.$node = $('<div id="game-board"></div>');
     this.setBoard();
-    this.makeEnemies(enemies);
+    this.makeEnemies(level);
   }
 
-  makeEnemies(n) {
+  makeEnemies(level) {
+    let nEnemies = level * 5;
     let enemies = [];
-    for (let i = 0; i < n; ++i) {
+    for (let i = 0; i < nEnemies; ++i) {
       enemies.push(new Enemy());
     }
   }
@@ -16,7 +17,7 @@ class Board {
     let style = {
       height: '500px',
       width: '750px',
-      margin: '50px auto',
+      margin: '20px auto',
       border: 'blue 1px solid',
       position: 'relative',
       overflow: 'hidden'
@@ -28,5 +29,3 @@ class Board {
   }
 
 }
-
-$('document').ready(() => new Board(10));

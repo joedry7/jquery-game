@@ -16,6 +16,11 @@ class Enemy {
     }
 
     this.$node.css(style)
+    this.$node.hover(() => {
+      this.$node.css('background-color', "red");
+    }, () => {
+      this.$node.css('background-color', "black");
+    })
 
     $('#game-board').append(this.$node);
     let position = {
