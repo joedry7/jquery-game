@@ -9,6 +9,13 @@ class Game {
   startGame() {
     this.scoreboard = new Scoreboard();
     this.gameboard = new Gameboard(this.level);
+    this.gameboard.$node.on('mouseover', '.enemy', () => {
+      this.handleCollision();
+    })
+  }
+
+  handleCollision() {
+    this.scoreboard.onCollision();
   }
 
 }
