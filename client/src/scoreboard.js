@@ -9,6 +9,7 @@ class Scoreboard {
   }
 
   onCollision() {
+    // Reset score and increment collisions
     this.currentScore = 0;
     $('#current-score').text(this.currentScore);
 
@@ -17,10 +18,12 @@ class Scoreboard {
   }
 
   handleScore() {
+    // Increment score on an interval
     setInterval(() => {
       ++this.currentScore;
       $('#current-score').text(this.currentScore);
 
+      // If the current score surpasses the highscore, update highscore
       if (this.currentScore > this.highScore) {
         this.highScore = this.currentScore;
         $('#high-score').text(this.highScore);
@@ -29,6 +32,7 @@ class Scoreboard {
   }
 
   fillBoard() {
+    // Start all scores at 0
     let currentScore = $(`<p>Current Score: <span id="current-score">0</span></p>`);
     let highScore = $(`<p>High Score: <span id="high-score">0</span></p>`);
     let collisions = $(`<p>Collisions <span id="collisions">0</span></p>`);

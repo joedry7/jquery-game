@@ -5,10 +5,12 @@ class Enemy {
   }
 
   move(speed) {
+    // Move to a random place on the board
     let position = {
       top: `${Math.random() * 500}px`,
       left: `${Math.random() * 750}px`
     }
+
     this.$node.animate(position, speed)
   }
 
@@ -31,6 +33,8 @@ class Enemy {
     })
 
     $('#game-board').append(this.$node);
+
+    // Move the enemies to their starting points -> A random position on the game board
     let position = {
       top: `${Math.random() * 500}px`,
       left: `${Math.random() * 750}px`
