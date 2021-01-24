@@ -29,9 +29,9 @@ class Enemy {
 
     this.$node.css(style)
     this.$node.hover(() => {
-      this.$node.css({backgroundColor: 'red', height: '40px', width: '40px'});
+      this.$node.css({ backgroundColor: 'red' });
     }, () => {
-      this.$node.css({backgroundColor: 'black', height: `${size}px`, width: `${size}px`,});
+      this.$node.css({ backgroundColor: 'black' });
     })
 
     $('#game-board').append(this.$node);
