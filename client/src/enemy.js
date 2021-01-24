@@ -1,7 +1,7 @@
 class Enemy {
-  constructor() {
+  constructor(size) {
     this.$node = $(`<div class="enemy"></div>`);
-    this.setEnemy();
+    this.setEnemy(size);
   }
 
   move(speed) {
@@ -14,10 +14,10 @@ class Enemy {
     this.$node.animate(position, speed)
   }
 
-  setEnemy() {
+  setEnemy(size) {
     let style = {
-      height: '25px',
-      width: '25px',
+      height: `${size}px`,
+      width: `${size}px`,
       borderRadius: '50%',
       backgroundColor: 'black',
       position: 'absolute',
@@ -29,7 +29,7 @@ class Enemy {
     this.$node.hover(() => {
       this.$node.css({backgroundColor: 'red', height: '40px', width: '40px'});
     }, () => {
-      this.$node.css({backgroundColor: 'black', height: '25px', width: '25px'});
+      this.$node.css({backgroundColor: 'black', height: `${size}px`, width: `${size}px`,});
     })
 
     $('#game-board').append(this.$node);

@@ -1,28 +1,22 @@
 class Gameboard {
-  constructor(level) {
+  constructor(size, quantity, speed) {
     this.$node = $('<div id="game-board"></div>');
-    this.level = level;
     this.setBoard();
-    this.makeEnemies(level);
-    this.takeTurn();
+    this.makeEnemies(size, quantity);
+    this.takeTurn(speed);
   }
 
-  makeEnemies(level) {
-    // Number of enemies is based on the level
-    let nEnemies = level * 5;
+  makeEnemies(size, quantity) {
     let enemies = [];
 
-    for (let i = 0; i < nEnemies; ++i) {
-      enemies.push(new Enemy());
+    for (let i = 0; i < quantity; ++i) {
+      enemies.push(new Enemy(size));
     }
 
     this.enemies = enemies;
   }
 
-  takeTurn() {
-    // Speed is based on the level
-    let speed = 2000 - (this.level * 300);
-
+  takeTurn(speed) {
     // Move the enemies once per second
     setInterval(() => {
       this.enemies.forEach((enemy) => {
@@ -36,14 +30,14 @@ class Gameboard {
       height: '500px',
       width: '750px',
       margin: '20px auto',
-      border: 'blue 1px solid',
       position: 'relative',
-      overflow: 'hidden'
+      overflow: 'hidden',
+      backgroundColor: 'gray'
     }
 
     this.$node.css(style)
 
-    $('body').append(this.$node);
+    $('#game').append(this.$node);
   }
 
 }
