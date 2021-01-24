@@ -27,7 +27,7 @@ class Game {
     // Add event listener to enemy nodes
     this.gameboard.$node.on('mouseover', '.enemy', () => {
       this.handleCollision();
-    })
+    });
   }
 
   startGame() {

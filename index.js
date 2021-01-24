@@ -8,5 +8,5 @@ const HOST = 'localhost';
 app.use(express.static(path.join(__dirname, './client')));
 
 app.listen(PORT, HOST, () => {
-  console.log(`Server is listening at ${HOST}:${PORT}`)
+  console.log(`Server is listening at ${HOST}:${PORT}`);
 });

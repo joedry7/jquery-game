@@ -11,9 +11,9 @@ class Enemy {
     let position = {
       top: `${Math.random() * this.boardHeight}px`,
       left: `${Math.random() * this.boardWidth}px`
-    }
+    };
 
-    this.$node.animate(position, speed)
+    this.$node.animate(position, speed);
   }
 
   setEnemy(size) {
@@ -25,14 +25,16 @@ class Enemy {
       position: 'absolute',
       top: '250px',
       left: '375px'
-    }
+    };
 
-    this.$node.css(style)
+    this.$node.css(style);
+
+    // Change color on hover
     this.$node.hover(() => {
       this.$node.css({ backgroundColor: 'red' });
     }, () => {
       this.$node.css({ backgroundColor: 'black' });
-    })
+    });
 
     $('#game-board').append(this.$node);
 
@@ -41,7 +43,7 @@ class Enemy {
       top: `${Math.random() * this.boardHeight}px`,
       left: `${Math.random() * this.boardWidth}px`
     }
-    this.$node.animate(position, 'slow')
+    this.$node.animate(position, 'slow');
   }
 
 }

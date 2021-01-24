@@ -14,7 +14,6 @@ $('document').ready(() => {
     } else {
       window.newGame = new Game(size, quantity, speed);
     }
-
   });
 
 });

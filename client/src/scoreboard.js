@@ -46,8 +46,6 @@ class Scoreboard {
     let collisions = $('<p>Collisions: <span id="collisions">0</span></p>');
 
     this.$node.append(currentScore, highScore, collisions);
-
-    $('p').css({ padding: '0 15px' });
   }
 
   setBoard() {
@@ -56,11 +54,10 @@ class Scoreboard {
       width: '500px',
       margin: '0 auto',
       backgroundColor: 'gray',
-      display: 'flex'
+      display: 'flex',
     }
 
-    this.$node.css(style)
-
+    this.$node.css(style);
     $('#game').append(this.$node);
 
     this.fillBoard();

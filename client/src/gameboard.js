@@ -24,7 +24,7 @@ class Gameboard {
       this.enemies.forEach((enemy) => {
         enemy.move(speed);
       })
-    }, 1000)
+    }, 1000);
   }
 
   setBoard() {
@@ -35,9 +35,9 @@ class Gameboard {
       position: 'relative',
       overflow: 'hidden',
       backgroundColor: 'gray'
-    }
+    };
 
-    this.$node.css(style)
+    this.$node.css(style);
 
     $('#game').append(this.$node);
   }
