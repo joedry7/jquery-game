@@ -63,6 +63,7 @@ class Scoreboard {
     this.$node.css(style)
 
     $('#game').append(this.$node);
+
     this.fillBoard();
   }
 

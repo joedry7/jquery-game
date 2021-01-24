@@ -1,6 +1,8 @@
 class Gameboard {
   constructor(size, quantity, speed) {
     this.$node = $('<div id="game-board"></div>');
+    this.height = .7 * $(window).height();
+    this.width = .7 * $(window).width();
     this.setBoard();
     this.makeEnemies(size, quantity);
     this.takeTurn(speed);
@@ -10,7 +12,7 @@ class Gameboard {
     let enemies = [];
 
     for (let i = 0; i < quantity; ++i) {
-      enemies.push(new Enemy(size));
+      enemies.push(new Enemy(size, this.height, this.width));
     }
 
     this.enemies = enemies;
@@ -27,8 +29,8 @@ class Gameboard {
 
   setBoard() {
     let style = {
-      height: '500px',
-      width: '750px',
+      height: `${this.height}px`,
+      width: `${this.width}px`,
       margin: '20px auto',
       position: 'relative',
       overflow: 'hidden',

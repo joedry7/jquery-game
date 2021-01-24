@@ -1,14 +1,16 @@
 class Enemy {
-  constructor(size) {
+  constructor(size, boardHeight, boardWidth) {
     this.$node = $(`<div class="enemy"></div>`);
+    this.boardHeight = boardHeight;
+    this.boardWidth = boardWidth;
     this.setEnemy(size);
   }
 
   move(speed) {
     // Move to a random place on the board
     let position = {
-      top: `${Math.random() * 500}px`,
-      left: `${Math.random() * 750}px`
+      top: `${Math.random() * this.boardHeight}px`,
+      left: `${Math.random() * this.boardWidth}px`
     }
 
     this.$node.animate(position, speed)
@@ -36,8 +38,8 @@ class Enemy {
 
     // Move the enemies to their starting points -> A random position on the game board
     let position = {
-      top: `${Math.random() * 500}px`,
-      left: `${Math.random() * 750}px`
+      top: `${Math.random() * this.boardHeight}px`,
+      left: `${Math.random() * this.boardWidth}px`
     }
     this.$node.animate(position, 'slow')
   }
