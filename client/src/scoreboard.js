@@ -36,7 +36,6 @@ class Scoreboard {
         this.highScore = this.currentScore;
         $('#high-score').text(this.highScore);
       }
-      console.log(this.currentScore)
     }, 100);
   }
 
